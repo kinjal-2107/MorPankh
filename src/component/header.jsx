@@ -19,7 +19,7 @@ const Header = () => {
             <Image src={img} width={300} className="img-fluid" />
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Toggle aria-controls="navbarScroll" className="toggle" />
           <Navbar.Offcanvas placement="end">
             <Offcanvas.Header closeButton>
               <Offcanvas.Title>MorPankh</Offcanvas.Title>
@@ -63,7 +63,7 @@ const Header = () => {
                 </Form>
 
                 <Nav.Link href="/" className="ms-5 ms-md-0 text-md-dark ">
-                  Contact us
+                  CONTACTUS
                 </Nav.Link>
                 <Nav.Link href="/" className="ms-5 ms-md-0 text-md-dark ">
                   LOGIN
