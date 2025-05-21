@@ -1,0 +1,27 @@
+/* Example styles */
+.navbar {
+  background-color: #050505;
+}
+
+.text-color {
+  color: #fcf9f9;
+}
+@media (min-width: 978px) {
+  .text-md-dark {
+    color: #060606;
+  }
+}
+@media (min-width: 992px) {
+  .text-md-dark {
+    color: #fdfbfb;
+  }
+}
+
+
+
+@media (min-width: 1200px) {
+  .search {
+    margin-left: 290px !important; /* Ensure it overrides ms-md-0 */
+  }
+}
+
