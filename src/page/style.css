@@ -1,6 +1,32 @@
 /* Example styles */
 .navbar {
-  background-color: #050505;
+  background-color: #0a270c;
+  height: 100px;
+}
+.nav-links span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-links span:hover {
+  color: #d2650e;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 200px !important;
+    height: auto;
+  }
+  .navbar {
+    height: auto;
+    padding: 10px 15px;
+  }
+  .offcanvas-title {
+    font-size: 1.2rem;
+  }
 }
 
 .text-color {
@@ -16,16 +42,14 @@
     color: #fdfbfb;
   }
 }
-
-
-
-@media (min-width: 1200px) {
-  .search {
-    margin-left: 290px !important; /* Ensure it overrides ms-md-0 */
-  }
-}
-
 .toggle{
-    background-color: #fcf9f9;
+  position: relative;
+    background-color:#577d5a;
+}
+.bg{
+  background-color: #0a270c;
 }
 
+
+
+  
