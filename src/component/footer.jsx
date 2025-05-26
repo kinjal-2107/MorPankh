@@ -2,17 +2,20 @@ import Image from "react-bootstrap/Image";
 import img from "../assets/Brand.png";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/esm/Col";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import Container from "react-bootstrap/esm/Container";
 import "../page/style.css";
+
 const Footer = () => {
   return (
     <>
       <div className="bg">
-        <div>
-          <Image src={img} width={400} height={100} className="logo m-4 " />
+        <div className="d-flex justify-content-center justify-content-md-start">
+          <Image src={img} width={450} height={100} className="logo m-4  " />
         </div>
         <Row
-          className="text-center text-md-start m-5"
+          className="text-center text-md-start m-5 "
           style={{ color: "white" }}
         >
           <Col xs={12} md={4} lg={2} className="mb-4">
