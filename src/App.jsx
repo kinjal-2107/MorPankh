@@ -1,14 +1,10 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import Header from "./component/header";
-import Footer from "./component/footer";
+import EndRoutes from "./Routes/routes";
 
 function App() {
   return (
     <>
-      <Header />
-
-      <Footer />
+      <EndRoutes />
     </>
   );
 }

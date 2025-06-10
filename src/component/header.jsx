@@ -3,16 +3,18 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
 import img from "../assets/Brand.png";
-import Badge from "react-bootstrap/Badge";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import InputGroup from "react-bootstrap/InputGroup";
 import "../page/style.css";
+import LoginModal from "./loginform";
+import { showLoginForm } from "../redux/slice/formslice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const isModalVisible = useSelector((state) => state.form.isvisible);
+
   return (
     <>
       <Navbar expand="lg" className="border-bottom">
@@ -34,11 +36,15 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="flex-column">
+                <Nav.Link href="/Homepage">HOME</Nav.Link>
                 <Nav.Link href="/">COLLECTION</Nav.Link>
                 <Nav.Link href="/">TRACK ORDER</Nav.Link>
                 <Nav.Link href="/">SUPPORT</Nav.Link>
                 <Nav.Link href="/">ABOUT US</Nav.Link>
                 <Nav.Link href="/">CONTACTUS</Nav.Link>
+                <Nav.Link onClick={() => dispatch(showLoginForm())}>
+                  LOGIN
+                </Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
@@ -48,7 +54,7 @@ const Header = () => {
 
           <Nav className="d-flex ">
             <Nav.Link
-              href="/"
+              as="span"
               className="ms-5 ms-md-0 me-xs-0 text-md-dark d-none d-lg-block "
             >
               <svg
@@ -58,10 +64,13 @@ const Header = () => {
                 fill="currentColor"
                 className="bi bi-person"
                 viewBox="0 0 16 16"
+                onClick={() => dispatch(showLoginForm())}
               >
                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
               </svg>
+              <LoginModal show={isModalVisible} />
             </Nav.Link>
+
             <Nav.Link href="/" className="p-xs-0 ms-md-0 text-md-dark ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +101,9 @@ const Header = () => {
       </Navbar>
       <Row className="nav-links d-none d-lg-block m-0 p-0 ">
         <Container className="d-flex justify-content-center py-2">
+          <Col md={2} xxl={1}>
+            HOME
+          </Col>
           <Col md={2} xxl={1}>
             COLLECTION
           </Col>

@@ -1,4 +1,4 @@
-/* Example styles */
+
 .navbar {
   background-color: #0a270c;
   height: 100px;
@@ -22,6 +22,7 @@
   .nav-links{
     display: none;
   }
+  
   
  }
 @media (max-width: 768px) {
