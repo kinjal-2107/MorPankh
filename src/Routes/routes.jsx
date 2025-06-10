@@ -7,7 +7,7 @@ const routes = () => {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/Homepage" element={<Homepage />} />
+          <Route index element={<Homepage />} />
         </Route>
       </Routes>
     </>

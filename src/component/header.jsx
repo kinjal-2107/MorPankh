@@ -36,7 +36,6 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="flex-column">
-                <Nav.Link href="/Homepage">HOME</Nav.Link>
                 <Nav.Link href="/">COLLECTION</Nav.Link>
                 <Nav.Link href="/">TRACK ORDER</Nav.Link>
                 <Nav.Link href="/">SUPPORT</Nav.Link>
@@ -101,9 +100,6 @@ const Header = () => {
       </Navbar>
       <Row className="nav-links d-none d-lg-block m-0 p-0 ">
         <Container className="d-flex justify-content-center py-2">
-          <Col md={2} xxl={1}>
-            HOME
-          </Col>
           <Col md={2} xxl={1}>
             COLLECTION
           </Col>
