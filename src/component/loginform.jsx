@@ -47,8 +47,10 @@ const LoginModal = ({ show }) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button>LOGIN</Button>
-          <Button onClick={handleClose}>CLOSE</Button>
+          <Button className="bg-success">LOGIN</Button>
+          <Button onClick={handleClose} className="bg-success">
+            CLOSE
+          </Button>
         </Modal.Footer>
       </Modal>
     </>

@@ -33,10 +33,16 @@ const SearchModal = ({ show }) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button
+          className="bg-success"
+          variant="secondary"
+          onClick={handleClose}
+        >
           Submit
         </Button>
-        <Button onClick={handleClose}>CLOSE</Button>
+        <Button className="bg-success" onClick={handleClose}>
+          CLOSE
+        </Button>
       </Modal.Footer>
     </Modal>
   );

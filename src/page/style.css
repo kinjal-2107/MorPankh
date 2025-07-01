@@ -64,6 +64,20 @@
   }
 }
 
+/* .img{
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  
+}
+
+@media (min-width:1200px) {
+  .img{
+    height: 500px;
+  }
+  
+} */
+
 
 
   
