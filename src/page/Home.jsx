@@ -22,7 +22,7 @@ import vd4 from "../assets/vd4.mp4";
 import vd5 from "../assets/vd5.mp4";
 import vd6 from "../assets/vd6.mp4";
 
-const Homepage = () => {
+const Home = () => {
   return (
     <>
       <OwlCarousel
@@ -213,4 +213,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Home;
