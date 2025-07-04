@@ -34,7 +34,7 @@ const Home = () => {
       >
         <div>
           <img
-            className="img-fluid "
+            className="img"
             style={{ maxHeight: "560px", width: "100%" }}
             src={img1}
             alt="img1"
@@ -42,7 +42,7 @@ const Home = () => {
         </div>
         <div>
           <img
-            className="img-fluid "
+            className="img "
             style={{ maxHeight: "560px", width: "100%" }}
             src={img1}
             alt="img2"
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
         <div>
           <img
-            className="img-fluid"
+            className="img"
             style={{ maxHeight: "560px", width: "100%" }}
             src={img1}
             alt="img3"
