@@ -14,6 +14,7 @@ const routes = () => {
           <Route path="/Product" element={<Product />} />
           <Route path="/Contactus" element={<Contactus />} />
           <Route path="/Aboutus" element={<Aboutus />} />
+          <Route path="/Product" element={<Product />} />
         </Route>
       </Routes>
     </>

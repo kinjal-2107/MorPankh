@@ -8,8 +8,8 @@ const Contact = () => {
     <div
       style={{
         background:
-          "linear-gradient(to right,rgb(221, 239, 184),rgb(187, 208, 167))",
-        padding: "60px",
+          "linear-gradient(to right,rgb(206, 227, 163),rgb(187, 208, 167))",
+        padding: "30px",
         minHeight: "90vh",
       }}
     >
@@ -25,9 +25,9 @@ const Contact = () => {
           <Col md={6}>
             <Card
               style={{
-                background: "rgba(255, 255, 255, 0.25)",
-                backdropfilter: "blur(12px)",
-                border: "1px solid rgba(255, 255, 255, 0.2);",
+                background: "rgba(45, 44, 44, 0.25)",
+                backdropfilter: "blur(10px)",
+                border: "1px solid rgba(43, 43, 43, 0.2);",
               }}
               className="p-4 shadow-lg border-0 rounded-4"
             >
@@ -36,7 +36,7 @@ const Contact = () => {
               </h4>
               <Form>
                 <Form.Group className="mb-3" controlId="formName">
-                  <Form.Label>Your Name</Form.Label>
+                  <Form.Label className="fs-5">Your Name</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter your name"
@@ -46,7 +46,7 @@ const Contact = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>Email address</Form.Label>
+                  <Form.Label className="fs-5">Email address</Form.Label>
                   <Form.Control
                     type="email"
                     placeholder="Enter your email"
@@ -56,7 +56,7 @@ const Contact = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-4" controlId="formMessage">
-                  <Form.Label>Message</Form.Label>
+                  <Form.Label className="fs-5">Message</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={4}
@@ -70,7 +70,7 @@ const Contact = () => {
                   <Button
                     variant="success"
                     type="submit"
-                    className="px-4 py-2 rounded-3"
+                    className="px-4 py-2 rounded-3 fs-5"
                   >
                     Send Message
                   </Button>
@@ -83,27 +83,27 @@ const Contact = () => {
           <Col md={5}>
             <Card
               style={{
-                background: "rgba(255, 255, 255, 0.25)",
-                backdropfilter: "blur(12px)",
-                border: "1px solid rgba(255, 255, 255, 0.2);",
+                background: "rgba(45, 44, 44, 0.25)",
+                backdropfilter: "blur(10px)",
+                border: "1px solid rgba(36, 35, 35, 0.2);",
               }}
               className="p-4 shadow-lg border-0 rounded-4 "
             >
               <h4 className="text-success mb-1">Address</h4>
-              <p>
+              <p className="fs-5">
                 5, Vaishnavdevi Amour, Near Nirvana Complex,
                 <br />
                 Jahangirabaad, Surat, Gujarat - 395005
               </p>
 
               <h4 className="text-success mt-4 mb-1">Phone</h4>
-              <p>+91 9004239529</p>
+              <p className="fs-5">+91 9004239529</p>
 
               <h4 className="text-success mt-4 mb-1">Email</h4>
-              <p>morpankh.shop@gmail.com</p>
+              <p className="fs-5">morpankh.shop@gmail.com</p>
 
               <h4 className="text-success mt-4 mb-3">Follow Us</h4>
-              <div className="d-flex gap-3 align-items-center">
+              <div className="d-flex gap-3 align-items-center fs-5">
                 <a
                   href="https://www.instagram.com/mor.pankh_?igsh=MTRqNGRjYnVyNDVvdA=="
                   target="_blank"
