@@ -53,8 +53,8 @@ const Header = () => {
                 <Nav className="flex-column">
                   <Nav.Link href="/">COLLECTION</Nav.Link>
                   <Nav.Link href="/">TRACK ORDER</Nav.Link>
-                  <Nav.Link href="/Aboutus">ABOUT US</Nav.Link>
-                  <Nav.Link href="/Contactus">CONTACTUS</Nav.Link>
+                  <Nav.Link to="/Aboutus">ABOUT US</Nav.Link>
+                  <Nav.Link to="/Contactus">CONTACTUS</Nav.Link>
                   <Nav.Link onClick={() => dispatch(showLoginForm())}>
                     LOGIN
                   </Nav.Link>
