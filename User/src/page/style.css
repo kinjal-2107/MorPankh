@@ -1,0 +1,27 @@
+/* Fix layout overflow on small screens */
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+/* Base logo style */
+.navbar-brand img {
+  max-width: 280px;
+  transition: all 0.3s ease;
+}
+
+/* Shrink logo on small screens */
+@media (max-width: 576px) {
+  .navbar-brand img {
+    max-width: 200px;
+  }
+}
+
+
+@media (max-width: 330px) {
+  .navbar-brand img {
+    max-width: 90px;
+  }
+}
+
