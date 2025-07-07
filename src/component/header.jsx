@@ -162,7 +162,7 @@ const Header = () => {
         className="d-block d-lg-none position-fixed bottom-0 start-0 w-100 bg-white border-top"
         style={{ zIndex: 999 }}
       >
-        <Row className="text-center">
+        <Row className="text-center m-0">
           <Col className="py-2">
             <IoMdHome size={23} style={{ cursor: "pointer" }} />
           </Col>
