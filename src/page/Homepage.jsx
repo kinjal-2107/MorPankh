@@ -1,7 +1,9 @@
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import img1 from "../assets/img.png";
+import img1 from "../assets/Thank You.png";
+import img2 from "../assets/SALE.png";
+import img3 from "../assets/Mor Pankh.png";
 import upper from "../assets/shirt1.jpg";
 import bottomwear from "../assets/bottomwear.jpg";
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
@@ -24,39 +26,41 @@ import vd6 from "../assets/vd6.mp4";
 const Home = () => {
   return (
     <>
-      <OwlCarousel
-        className="owl-theme "
-        loop
-        autoplay
-        dots={false}
-        autoplayTimeout={3000}
-        items={1}
-      >
-        <div>
-          <img
-            className="img"
-            style={{ maxHeight: "560px", width: "100%" }}
-            src={img1}
-            alt="img1"
-          />
-        </div>
-        <div>
-          <img
-            className="img "
-            style={{ maxHeight: "560px", width: "100%" }}
-            src={img1}
-            alt="img2"
-          />
-        </div>
-        <div>
-          <img
-            className="img"
-            style={{ maxHeight: "560px", width: "100%" }}
-            src={img1}
-            alt="img3"
-          />
-        </div>
-      </OwlCarousel>
+      <Container className="mt-2">
+        <OwlCarousel
+          className="owl-theme "
+          loop
+          autoplay
+          dots={false}
+          autoplayTimeout={3000}
+          items={1}
+        >
+          <div>
+            <img
+              className="img-fluid"
+              style={{ maxHeight: "560px", width: "100%" }}
+              src={img1}
+              alt="img1"
+            />
+          </div>
+          <div>
+            <img
+              className="img-fluid "
+              style={{ maxHeight: "560px", width: "100%" }}
+              src={img2}
+              alt="img2"
+            />
+          </div>
+          <div>
+            <img
+              className="img-fluid"
+              style={{ maxHeight: "560px", width: "100%" }}
+              src={img3}
+              alt="img3"
+            />
+          </div>
+        </OwlCarousel>
+      </Container>
       <Row className="justify-content-center mt-5 mx-0 border-bottom">
         <Col
           xs={10}
@@ -137,30 +141,8 @@ const Home = () => {
         </OwlCarousel>
       </Container>
 
-      <div className="border my-5 ">
-        <h1 className="text-center ">Shop by Category</h1>
-        <Row className="m-0 my-5">
-          <Col>
-            <img width={300} src={esse} />
-            <div style={{ textAlign: "center" }}>HOODIES</div>
-          </Col>
-          <Col>
-            <img width={300} src={bottom} />
-            <div style={{ textAlign: "center" }}>BOTTOMS</div>
-          </Col>
-          <Col>
-            <img width={300} src={tshirt} />
-            <div style={{ textAlign: "center" }}>DROPDOWNS</div>
-          </Col>
-          <Col>
-            <img width={300} src={shirt} />
-            <div style={{ textAlign: "center" }}>SHIRT</div>
-          </Col>
-          <Col></Col>
-        </Row>
-      </div>
-      <Row className="m-0  justify-content-center my-5 text-center text-md-start">
-        <Col xs={12} sm={6} lg={3} className="mb-4">
+      <Row className="m-0  justify-content-center my-5 text-center text-md-start ">
+        <Col xs={12} sm={6} lg={3} className="mb-4 ">
           <div className="d-flex align-items-center">
             <RiMessage3Line size={50} className="me-3 text-primary" />
             <div>

@@ -18,7 +18,28 @@ const LoginModal = ({ show }) => {
     const { name, value } = e.target;
     setform({ ...form, [name]: value });
   };
-  const handle = async () => {
+  // const handle = async () => {
+  //   try {
+  //     const { ContactNumber, Password } = form;
+  //     if (!ContactNumber || !Password) {
+  //       alert("Please fill all fields.");
+  //       return;
+  //     }
+  //     const res = await axios.post("http://localhost:5000/api/loginuser", form);
+  //     console.log(res);
+  //   } catch (error) {
+  //     console.log("Not Login");
+  //   }
+  // };
+
+  const dispatch = useDispatch();
+  const Modalvisible = useSelector((state) => state.form.signvisible);
+
+  const handlechange = () => {
+    dispatch(showSignupForm());
+  };
+  const handleClose = async () => {
+    dispatch(hideModal());
     try {
       const { ContactNumber, Password } = form;
       if (!ContactNumber || !Password) {
@@ -30,16 +51,6 @@ const LoginModal = ({ show }) => {
     } catch (error) {
       console.log("Not Login");
     }
-  };
-
-  const dispatch = useDispatch();
-  const Modalvisible = useSelector((state) => state.form.signvisible);
-
-  const handlechange = () => {
-    dispatch(showSignupForm());
-  };
-  const handleClose = () => {
-    dispatch(hideModal());
   };
 
   return (
@@ -93,7 +104,7 @@ const LoginModal = ({ show }) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="bg-success" onClick={handle}>
+          <Button className="bg-success" onClick={handleClose}>
             LOGIN
           </Button>
           <Button onClick={handleClose} className="bg-success">

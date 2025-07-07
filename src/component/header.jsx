@@ -9,35 +9,65 @@ import {
   Dropdown,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Contactus from "../page/contactus";
-import Aboutus from "../page/aboutus";
-import img from "../assets/Brand.png";
+import img from "../assets/LOGO.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import "../page/style.css";
 import LoginModal from "./loginform";
 import { showLoginForm } from "../redux/slice/formslice";
-import { FaUser } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
-import { BsFillBagHeartFill } from "react-icons/bs";
+import { IoCart } from "react-icons/io5";
+import { IoMdHome } from "react-icons/io";
+import { IoPersonCircleSharp } from "react-icons/io5";
 
 const Header = () => {
   const dispatch = useDispatch();
   const isModalVisible = useSelector((state) => state.form.isvisible);
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [showSearch, setShowSearch] = useState(false);
 
   return (
     <>
-      <div className="position-sticky top-0 z-3 bg-white">
+      <header className="position-sticky top-0 z-3 bg-white shadow-sm  ">
         <Navbar expand="lg" className="border-bottom">
-          <Container>
+          <Container className="d-flex justify-content-between">
+            {/* Mobile Toggle */}
             <Navbar.Toggle
               aria-controls="navbarScroll"
-              className="d-lg-none toggle xs-m-0"
+              className="d-lg-none p-1"
+              style={{
+                width: "30px",
+                height: "30px",
+                fontSize: "0.7rem",
+                border: "1px solid #999",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             />
+
+            {/* Logo */}
+            <Navbar.Brand as={Link} to="/">
+              <Image src={img} className="img-fluid" alt="Brand Logo" />
+            </Navbar.Brand>
+
+            {/* Desktop Icons */}
+            <div className="d-flex align-items-center gap-3 d-none d-lg-flex">
+              <span
+                size={20}
+                style={{ cursor: "pointer", fontWeight: "bold" }}
+                onClick={() => dispatch(showLoginForm())}
+              >
+                LOGIN
+              </span>
+              <FaSearch
+                size={20}
+                style={{ cursor: "pointer" }}
+                onClick={() => setShowSearch(true)}
+              />
+              <IoCart size={25} style={{ cursor: "pointer" }} />
+            </div>
+
+            {/* Offcanvas Menu - MUST be inside Navbar for toggle to work */}
             <Navbar.Offcanvas
               id="navbarScroll"
               aria-labelledby="offcanvasNavbarLabel"
@@ -45,92 +75,110 @@ const Header = () => {
               className="d-lg-none"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title id="offcanvasNavbarLabel" className="ts">
+                <Offcanvas.Title id="offcanvasNavbarLabel">
                   MORPANKH
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="flex-column">
-                  <Nav.Link href="/">COLLECTION</Nav.Link>
-                  <Nav.Link href="/">TRACK ORDER</Nav.Link>
-                  <Nav.Link to="/Aboutus">ABOUT US</Nav.Link>
-                  <Nav.Link to="/Contactus">CONTACTUS</Nav.Link>
+                  <Nav.Link as={Link} to="/">
+                    TOP WEAR
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/">
+                    BOTTOM WEAR
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/Aboutus">
+                    ABOUT US
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/Contactus">
+                    CONTACT US
+                  </Nav.Link>
                   <Nav.Link onClick={() => dispatch(showLoginForm())}>
                     LOGIN
                   </Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
-            <Navbar.Brand className="mx-auto d-flex justify-content-center">
-              <Image src={img} width={350} height={50} className="logo " />
-            </Navbar.Brand>
-
-            <Nav className="d-flex ">
-              <Nav.Link
-                as="span"
-                className="ms-5 ms-md-0 me-xs-0 text-md-dark d-none d-lg-block "
-              >
-                <FaUser size={20} onClick={() => dispatch(showLoginForm())} />
-                <LoginModal show={isModalVisible} />
-              </Nav.Link>
-              <Nav.Link className="p-xs-0 ms-md-0 text-md-dark ">
-                <FaSearch size={20} onClick={handleShow} />
-                <Offcanvas show={show} onHide={handleClose} placement="end">
-                  <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>SEARCH</Offcanvas.Title>
-                  </Offcanvas.Header>
-                  <Offcanvas.Body>
-                    <input
-                      type="text"
-                      placeholder="Search..."
-                      className="form-control"
-                    />
-                  </Offcanvas.Body>
-                </Offcanvas>
-              </Nav.Link>
-              <Nav.Link href="/" className="p-xs-0 ms-md-0 text-md-dark ">
-                <BsFillBagHeartFill size={22} />
-              </Nav.Link>
-            </Nav>
           </Container>
         </Navbar>
-        <Row className="nav-links d-none d-lg-flex m-0 p-0">
-          <Container className="d-flex justify-content-center align-items-center py-2 gap-5">
-            <Col xs="auto">
-              <Dropdown>
-                <Dropdown.Toggle
-                  as="span"
-                  className="fs-6 fw-medium "
-                  style={{ cursor: "pointer" }}
-                >
-                  COLLECTION
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item>T-SHIRT</Dropdown.Item>
-                  <Dropdown.Item>HOODIES</Dropdown.Item>
-                  <Dropdown.Item>SHIRT</Dropdown.Item>
-                  <Dropdown.Item>PANT</Dropdown.Item>
-                  <Dropdown.Item>JOGGERS</Dropdown.Item>
-                  <Dropdown.Item>DROPDOWM SHIRT</Dropdown.Item>
-                  <Dropdown.Item>DROPDOWN T-SHIRT</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
 
-            <Col xs="auto" className="fs-6  text-dark">
-              <Link to="/Aboutus" className=" text-decoration-none text-dark">
-                ABOUT US
-              </Link>
-            </Col>
-            <Col xs="auto" className="fs-6  text-dark">
-              TRACK ORDER
-            </Col>
-            <Col xs="auto" className="fs-6  text-dark">
-              <Link to="/Contactus" className=" text-decoration-none text-dark">
-                CONTACT US
-              </Link>
-            </Col>
+        {/* Search Offcanvas */}
+        <Offcanvas
+          show={showSearch}
+          onHide={() => setShowSearch(false)}
+          placement="end"
+        >
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>SEARCH</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search..."
+            />
+          </Offcanvas.Body>
+        </Offcanvas>
+
+        {/* Main Navigation - Desktop */}
+        <div
+          className="d-none d-lg-block border-top "
+          style={{ backgroundColor: "ivory", boxShadow: "inherit" }}
+        >
+          <Container className="py-2 d-flex justify-content-center gap-4">
+            <Dropdown>
+              <Dropdown.Toggle
+                as="span"
+                className="fw-semibold"
+                style={{ cursor: "pointer" }}
+              >
+                TOP WEAR
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item>T-SHIRT</Dropdown.Item>
+                <Dropdown.Item>HOODIES</Dropdown.Item>
+                <Dropdown.Item>SHIRT</Dropdown.Item>
+                <Dropdown.Item>PANT</Dropdown.Item>
+                <Dropdown.Item>JOGGERS</Dropdown.Item>
+                <Dropdown.Item>DROPDOWN SHIRT</Dropdown.Item>
+                <Dropdown.Item>DROPDOWN T-SHIRT</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+
+            <Link to="/" className="text-decoration-none text-dark fw-semibold">
+              BOTTOM WEAR
+            </Link>
+            <span className="fw-semibold">PLUS SIZE</span>
+            <Link
+              to="/Contactus"
+              className="text-decoration-none text-dark fw-semibold"
+            >
+              PRINT YOUR T-SHIRT
+            </Link>
           </Container>
+        </div>
+      </header>
+      <div
+        className="d-block d-lg-none position-fixed bottom-0 start-0 w-100 bg-white border-top"
+        style={{ zIndex: 999 }}
+      >
+        <Row className="text-center">
+          <Col className="py-2">
+            <IoMdHome size={23} style={{ cursor: "pointer" }} />
+          </Col>
+          <Col className="py-2">
+            <FaSearch
+              size={20}
+              style={{ cursor: "pointer" }}
+              onClick={() => setShowSearch(true)}
+            />
+          </Col>
+          <Col className="py-2">
+            <IoCart size={23} style={{ cursor: "pointer" }} />
+          </Col>
+          <Col className="py-2">
+            <IoPersonCircleSharp size={23} style={{ cursor: "pointer" }} />
+          </Col>
         </Row>
       </div>
     </>

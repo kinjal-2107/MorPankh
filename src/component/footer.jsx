@@ -8,21 +8,24 @@ import Contactus from "../page/contactus";
 const Footer = () => {
   return (
     <>
-      <div className="bg py-5">
-        <Row className="text-center text-md-start text-white px-3 px-md-5">
+      <div
+        className="bg py-5 border-top "
+        style={{ backgroundColor: "ivory", boxShadow: "inherit" }}
+      >
+        <Row className="text-center text-md-start text-dark px-3 px-md-5">
           {/* Main Menu */}
           <Col xs={12} md={4} lg={2} className="mb-4">
             <h5>Main Menu</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="/" className="text-white text-decoration-none">
+                <a href="/" className="text-dark text-decoration-none">
                   Shop By Product
                 </a>
               </li>
               <li>
                 <a
                   href="/collection"
-                  className="text-white text-decoration-none"
+                  className="text-dark text-decoration-none"
                 >
                   Collection
                 </a>
@@ -30,7 +33,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/track-order"
-                  className="text-white text-decoration-none"
+                  className="text-dark text-decoration-none"
                 >
                   Track Order
                 </a>
@@ -43,15 +46,12 @@ const Footer = () => {
             <h5>Support</h5>
             <ul className="list-unstyled">
               <li>
-                <a
-                  href="/Contactus"
-                  className="text-white text-decoration-none"
-                >
+                <a href="/Contactus" className="text-dark text-decoration-none">
                   Call Us
                 </a>
               </li>
               <li>
-                <a href="/chat" className="text-white text-decoration-none">
+                <a href="/chat" className="text-dark text-decoration-none">
                   Chat With Us
                 </a>
               </li>
@@ -61,7 +61,7 @@ const Footer = () => {
           {/* Address */}
           <Col xs={12} md={6} lg={4} className="mb-4">
             <h5>Address</h5>
-            <address className="text-white">
+            <address className="text-dark">
               5, Vaishnavdevi Amour, Near Nirvana Complex,
               <br />
               Jahangirabaad, Surat, Gujarat - 395005
@@ -69,7 +69,7 @@ const Footer = () => {
               <FaPhoneAlt className="me-2" />
               <a
                 href="tel:9004239529"
-                className="text-white text-decoration-none"
+                className="text-dark text-decoration-none"
               >
                 9004239529
               </a>

@@ -18,7 +18,9 @@ const SearchModal = ({ show }) => {
     const { name, value } = e.target;
     setformdata({ ...formdata, [name]: value });
   };
-  const handlesignup = async () => {
+  const dispatch = useDispatch();
+  const handleClose = async () => {
+    dispatch(hideModal());
     try {
       const res = await axios.post(
         "http://localhost:5000/api/newuser",
@@ -28,12 +30,6 @@ const SearchModal = ({ show }) => {
     } catch {
       console.log(" Not create an account ");
     }
-  };
-
-  const dispatch = useDispatch();
-
-  const handleClose = () => {
-    dispatch(hideModal());
   };
 
   return (
@@ -91,7 +87,7 @@ const SearchModal = ({ show }) => {
         <Button
           className="bg-success"
           variant="secondary"
-          onClick={handlesignup}
+          onClick={handleClose}
         >
           Submit
         </Button>
